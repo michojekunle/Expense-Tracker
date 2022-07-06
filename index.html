@@ -10,22 +10,21 @@
 </head>
 <body>
     <div class="records">
-        <h1>Every Naira <span>(₦)</span> Counts</h1>
+        <h1>Every Naira <span class="green">(₦)</span> Counts</h1>
         <p>Your Balance</p>
-        <p id="balance" class="balance">₦200.00</p>
+        <p id="balance" class="balance">₦0.00</p>
         
         <div class="expense-manager">
             <div class="income">
                 <p class="income">Income</p>
-                <p class="income-amount" id="income-amount">₦ 20</p>
-
+                <p class="income-amount green" id="income-amount">₦0.00</p>
             </div>
 
             <div class="line"></div>
 
             <div class="expense">
                 <p class="income">Expense</p>
-                <p class="expense-amount" id="expense-amount">₦ 30</p>
+                <p class="expense-amount red" id="expense-amount">₦0.00</p>
             </div>
         </div>
         <div class="history">
@@ -33,6 +32,7 @@
                 History
             </h2>
             <hr>
+            
         </div>
     </div>
     <div class="expensesInput">
@@ -48,7 +48,6 @@
             <p>(<span class="green">+₦: income</span>, <span class="red">-₦: expense</span>)</p><br>
             <input type="number" placeholder="Enter Amount"><br>
             <input type="submit" value="Add">
-            
         </form>
     </div>
 </body>

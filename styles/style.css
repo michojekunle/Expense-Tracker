@@ -4,6 +4,10 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,6 +22,28 @@ body {
   height: auto;
   min-height: 100vh;
   padding: 40px;
-  background: lightslategrey;
+  background: #003552;
+  padding: 100px;
+  color: #fff;
+  font-weight: bolder;
+}
+
+body .red {
+  color: red;
+}
+
+body .green {
+  color: green;
+}
+
+.records {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */
