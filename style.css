@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+body {
+    background: greenyellow;
+    width:100vw;
+    height: auto;
+    min-height: 100vh;
+    padding:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
