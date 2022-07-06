@@ -149,14 +149,36 @@ body .green {
 }
 
 .expensesInput form input[type=submit] {
-  width: 60px;
+  width: 80px;
   padding: 8px 12px;
   background: #0B6496;
+  -webkit-box-shadow: 0 1px 4px black, 0 1px 2px black;
+          box-shadow: 0 1px 4px black, 0 1px 2px black;
+  color: #fff;
+  border-radius: 40px;
+  cursor: pointer;
 }
 
 .expensesInput form input[type=number]::-webkit-inner-spin-button,
 .expensesInput form input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px;
+  }
+  .records {
+    width: 90%;
+    margin-bottom: 60px;
+  }
+  .expensesInput {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
