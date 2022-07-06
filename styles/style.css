@@ -140,7 +140,23 @@ body .green {
   outline: none;
 }
 
+.expensesInput form small {
+  font-size: 1rem;
+}
+
 .expensesInput form label {
   font-size: 1.2rem;
+}
+
+.expensesInput form input[type=submit] {
+  width: 60px;
+  padding: 8px 12px;
+  background: #0B6496;
+}
+
+.expensesInput form input[type=number]::-webkit-inner-spin-button,
+.expensesInput form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */

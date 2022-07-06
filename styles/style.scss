@@ -109,16 +109,26 @@ body {
             outline: none;
         }
 
+        small {
+            font-size: 1rem;
+        }
+
         label {
             font-size: 1.2rem;
         }
 
-        p.amount {
-            
+        input[type=submit] {
+            width:60px;
+            padding: 8px 12px;
+            background: #0B6496;
+            box-shadow: 0 1px 4px rgb(0, 0, 0, 15%), 0 1px 2px rgb(0, 0, 0, 25%);
         }
 
-
-
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
     }
 
 }
