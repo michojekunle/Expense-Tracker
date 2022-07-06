@@ -79,3 +79,43 @@ body {
     }
 }
 
+.expensesInput {
+    width: 30%;
+    justify-self: start;
+    
+    form {
+        width:100%;
+        font-size: 1rem;
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+        input {
+            width:100%;
+            padding:10px 15px;
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            margin-bottom:20px;
+            border-radius:8px;
+            background-color: #fff;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        label {
+            font-size: 1.2rem;
+        }
+
+
+
+    }
+
+}
+

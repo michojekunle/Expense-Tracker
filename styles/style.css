@@ -105,4 +105,42 @@ body .green {
   width: 1px;
   background: #fff;
 }
+
+.expensesInput {
+  width: 30%;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.expensesInput form {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.expensesInput form h1 {
+  margin-bottom: 20px;
+}
+
+.expensesInput form hr {
+  margin-bottom: 20px;
+}
+
+.expensesInput form input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.expensesInput form input:focus {
+  outline: none;
+}
+
+.expensesInput form label {
+  font-size: 1.2rem;
+}
 /*# sourceMappingURL=style.css.map */
