@@ -34,6 +34,20 @@ body {
     display: flex;
     flex-direction: column;
 
-    
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+    p.balance {
+        font-size: 3rem;
+    }
+
+
 }
 

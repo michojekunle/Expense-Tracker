@@ -46,4 +46,18 @@ body .green {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
+.records h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.records p {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.records p.balance {
+  font-size: 3rem;
+}
 /*# sourceMappingURL=style.css.map */
