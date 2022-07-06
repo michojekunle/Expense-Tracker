@@ -1,0 +1,13 @@
+Expense tracker logic 
+
+** balance is constantly updating by calculating total income and expense and are stored to the local-storage.
+
+** history is constantly updated and filtered by the input whether of not the amount 
+   has a minus(-) sign and is stored to the local storage.
+
+** income and expense section is constantly updated and filtered by the input values
+   whether or not they have the minus(-) sign.
+
+** and the add button stimulates all of the operations except for the delete.
+
+** Delete button to delete from the history and removes all of its calcuations.
