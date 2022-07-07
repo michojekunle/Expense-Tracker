@@ -124,7 +124,7 @@ const deleteHistory = () => {
     calculateBalance(mainArray);
 
     deleteButton.parentElement.remove();
-};
+}
 
-deleteTransaction.addEventListener('click', deleteHistory());
+document.querySelector('').addEventListener('click', deleteHistory());
 
