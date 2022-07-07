@@ -114,6 +114,7 @@ console.log(mainArray);
 
 deleteTransaction.addEventListener('click', () => {
     let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
+    console.log(amount);
     for(let i=0; 1<mainArray.length; i++){
         if(mainArray[i] === amount){
             mainArray.splice(i, 1);
