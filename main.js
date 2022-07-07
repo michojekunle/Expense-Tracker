@@ -5,10 +5,10 @@ const incomeEl = document.querySelector('#income-amount');
 const expenseEl = document.querySelector('#expense-amount');
 const historyEl = document.querySelector('#history');
 const form = document.querySelector('#form-container');
-const transactionInput = document.querySelector('#transaction-input');
-const amountInput = document.querySelector('#amount-input');
+const transactionInput = document.querySelector('#transaction-input').value;
+const amountInput = document.querySelector('#amount-input').value;
 const submitTransactionBtn = document.querySelector('#submit-transaction');
-const deleteButton = document.querySelector('.delete-transaction');
+
 const content = document.querySelector('.content');
 
 //declaring history
@@ -80,39 +80,32 @@ function addToHistory(transaction, amount) {
         content.classList.add('expense');
     }
 
+    console.log(history);
     historyEl.appendChild(history);
 } // end addToHistory
 
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     if (transactionInput=='' || amountInput=='') {
-//         alert('Please fill in values for transaction and amount');
-//      }
-//     else {
-//         mainArray.push(amountInput);
-//         calculateBalance(mainArray);
-//         addToHistory(transactionInput, amountInput);
-//     }
-// });
-
-addToHistory('small', 200);
-let array = [25, -22, 33, -67];
-
-calculateBalance(array);
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+        console.log(`Values for transaction and amount are ${transactionInput} and ${amountInput} `);
+        mainArray.push(amountInput);
+        calculateBalance(mainArray);
+        addToHistory(transactionInput, amountInput);
+});
 
 // history.addEventListener('hover', () => {
 //     deleteButton.classList.add('show');
 // });
 
-// deleteButton.addEventListener('click', () => {
-//     let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
-//     for(let i=0; 1<mainArray.length; i++){
-//         if(mainArray[i] === amount){
-//             mainArray.splice(i, 1);
-//             break;
-//         }    
-//     }
-//     calculateBalance(mainArray);
+document.querySelector('#delete-transaction').addEventListener('click', () => {
+    let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
+    for(let i=0; 1<mainArray.length; i++){
+        if(mainArray[i] === amount){
+            mainArray.splice(i, 1);
+            break;
+        }    
+    }
+    calculateBalance(mainArray);
 
-//     deleteButton.parentElement.remove();
-// });
+    deleteButton.parentElement.remove();
+});
