@@ -1,5 +1,5 @@
 
-//assigning all elements to manipulate to a variable. 
+//assigning all elements to be manipulated to variables. 
 const balanceEl = document.querySelector('#total-balance');
 const incomeEl = document.querySelector('#income-amount');
 const expenseEl = document.querySelector('#expense-amount');
@@ -112,7 +112,7 @@ console.log(mainArray);
 //     deleteButton.classList.add('show');
 // });
 
-deleteTransaction.addEventListener('click', () => {
+const deleteHistory = () => {
     let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
     console.log(amount);
     for(let i=0; 1<mainArray.length; i++){
@@ -124,4 +124,7 @@ deleteTransaction.addEventListener('click', () => {
     calculateBalance(mainArray);
 
     deleteButton.parentElement.remove();
-});
+};
+
+deleteTransaction.addEventListener('click', deleteHistory());
+
