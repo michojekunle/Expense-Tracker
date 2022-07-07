@@ -12,7 +12,7 @@
     <div class="records">
         <h1>Every Naira <span class="green">(₦)</span> Counts</h1>
         <p>Your Balance</p>
-        <p id="balance" class="balance">₦0.00</p>
+        <p id="total-balance" class="balance">₦0.00</p>
         
         <div class="expense-manager">
             <div class="income">
@@ -27,7 +27,7 @@
                 <p class="expense-amount red" id="expense-amount">₦0.00</p>
             </div>
         </div>
-        <div class="history">
+        <div id="history" class="history">
             <h2 class="title">
                 History
             </h2>
@@ -36,18 +36,18 @@
         </div>
     </div>
     <div class="expensesInput">
-        <form>
+        <form id="form-container">
             <h2 class="title">
                 Add a new Transaction
             </h2>
             <hr>
 
             <label for="transaction">Transaction</label><br>
-            <input type="text" placeholder="Transaction"><br>
+            <input id="transaction-input" type="text" placeholder="Transaction"><br>
             <label for="Amount">Amount</label><br>
             <small class="amount">(<span class="green">+₦: income</span>, <span class="red">-₦: expense</span>)</small><br>
-            <input type="number" placeholder="Enter Amount"><br>
-            <input type="submit" value="Add">
+            <input id="amount-input" type="number" placeholder="Enter Amount"><br>
+            <input id="submit-transaction" type="submit" value="Add">
         </form>
     </div>
 </body>
