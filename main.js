@@ -55,9 +55,9 @@ function calculateBalance(mainArray) {
     let expense = calculateExpense(expenseArray);
     let balance = income + expense;
 
-    balanceEl.textContent = `₦${balance}`;
-    incomeEl.textContent =  `₦${income}`;
-    expenseEl.textContent = `₦${expense}`;   
+    balanceEl.innerHTML = `₦${balance}`;
+    incomeEl.innerHTML =  `₦${income}`;
+    expenseEl.innerHTML = `₦${expense}`;   
 } // done with calculating balance function.
 
 
@@ -79,32 +79,40 @@ function addToHistory(transaction, amount) {
     } else {
         content.classList.add('expense');
     }
+
+    historyEl.appendChild(history);
 } // end addToHistory
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (transactionInput==='' || amountInput==='') {
-        alert('Please fill in values for transaction and amount');
-    } else {
-        mainArray.push(amountInput);
-        calculateBalance(mainArray);
-        addToHistory(transactionInput, amountInput);
-    }
-});
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     if (transactionInput=='' || amountInput=='') {
+//         alert('Please fill in values for transaction and amount');
+//      }
+//     else {
+//         mainArray.push(amountInput);
+//         calculateBalance(mainArray);
+//         addToHistory(transactionInput, amountInput);
+//     }
+// });
 
-history.addEventListener('hover', () => {
-    deleteButton.classList.add('show');
-});
+addToHistory('small', 200);
+let array = [25, -22, 33, -67];
 
-deleteButton.addEventListener('click', () => {
-    let amount = deleteButton.nextElementSibling.lastChild.textContent;
-    for(let i=0; 1<mainArray.length; i++){
-        if(mainArray[i] === amount){
-            mainArray.splice(i, 1);
-            break;
-        }    
-    }
-    calculateBalance(mainArray);
+calculateBalance(array);
 
-    deleteButton.parentElement.remove();
-});
+// history.addEventListener('hover', () => {
+//     deleteButton.classList.add('show');
+// });
+
+// deleteButton.addEventListener('click', () => {
+//     let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
+//     for(let i=0; 1<mainArray.length; i++){
+//         if(mainArray[i] === amount){
+//             mainArray.splice(i, 1);
+//             break;
+//         }    
+//     }
+//     calculateBalance(mainArray);
+
+//     deleteButton.parentElement.remove();
+// });
