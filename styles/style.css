@@ -149,11 +149,11 @@ body .green {
   color: #0B6496;
 }
 
-.records .history .histories .content.income {
+.records .history .histories .income {
   border-right: green;
 }
 
-.records .history .histories .content.expense {
+.records .history .histories .expense {
   border-right: red;
 }
 
