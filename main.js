@@ -9,6 +9,7 @@ const transactionInput = document.querySelector('#transaction-input');
 const amountInput = document.querySelector('#amount-input');
 const submitTransactionBtn = document.querySelector('#submit-transaction');
 const deleteButton = document.querySelector('.delete-transaction');
+const content = document.querySelector('.content');
 
 //declaring history
 let history;
@@ -64,20 +65,20 @@ function calculateBalance(mainArray) {
 function addToHistory(transaction, amount) {
     //creating histroy element
     history = document.createElement('div');
-    history.classList.add('in-ex');
+    history.classList.add('histories');
 
-    if (amount > 0) {
-        history.classList.add('income');
-    } else {
-        history.classList.add('expense');
-    }
-       
     history.innerHTML = `
     <button id="delete-transaction">X</button>
     <div class="content">
         <p>${transaction}</p>
         <p>${amount}</p>
-    </div>`
+    </div>`;
+
+    if (amount > 0) {
+        content.classList.add('income');
+    } else {
+        content.classList.add('expense');
+    }
 } // end addToHistory
 
 form.addEventListener('submit', (e) => {
