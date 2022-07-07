@@ -8,8 +8,7 @@ const form = document.querySelector('#form-container');
 const transactionInput = document.querySelector('#transaction-input');
 const amountInput = document.querySelector('#amount-input');
 const submitTransactionBtn = document.querySelector('#submit-transaction');
-
-let deleteButton;
+const deleteTransaction = document.querySelector('.delete');
 
 //declaring history
 let history;
@@ -76,13 +75,14 @@ function addToHistory(transaction, amount) {
     //     <p>${transaction}</p>
     //     <p>${amount}</p>
     // </div>`;
-    deleteButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.innerHTML = `X`;
 
     const content = document.createElement('div');
     content.classList.add('content');
-    content.innerHTML = ``;
+    content.innerHTML = `<p>${transaction}</p>
+                         <p>${amount}</p>`;
     
     if (amount > 0) {
         content.classList.add('income');
