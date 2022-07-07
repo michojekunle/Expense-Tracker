@@ -160,5 +160,5 @@ const deleteHistory = () => {
     deleteButton.parentElement.remove();
 }
 
-document.querySelector('').addEventListener('click', deleteHistory());
+document.querySelector('history').addEventListener('click', deleteHistory());
 
