@@ -59,7 +59,7 @@ function calculateBalance(mainArray) {
 
     balanceEl.innerHTML = `₦${balance}`;
     incomeEl.innerHTML =  `₦${income}`;
-    expenseEl.innerHTML = `₦${expense}`;   
+    expenseEl.innerHTML = `₦${Math.abs(expense)}`;   
 } // done with calculating balance function.
 
 
@@ -101,6 +101,8 @@ form.addEventListener('submit', (e) => {
         console.log(mainArray);
         calculateBalance(mainArray);
         addToHistory(transactionInput.value, amountInput.value);
+        transactionInput.value = '';
+        amountInput.value = '';
 });
 
 console.log(mainArray);
