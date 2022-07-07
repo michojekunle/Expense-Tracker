@@ -86,6 +86,7 @@ body {
             align-items: center;
             margin: 8px 0;
             background: none;
+        p{
             .delete{
                 outline: none;
                 border: none;
@@ -102,6 +103,7 @@ body {
                 align-items: center;
                 justify-content: center;
             }
+        }
             .content {
                 background-color: #fff;
                 width:95%;
