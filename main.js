@@ -68,13 +68,7 @@ function addToHistory(transaction, amount) {
     //creating histroy element
     history = document.createElement('div');
     history.classList.add('histories');
-
-    // history.innerHTML = `
-    // <button id="delete-transaction">X</button>
-    // <div class="content">
-    //     <p>${transaction}</p>
-    //     <p>${amount}</p>
-    // </div>`;
+    
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
     deleteButton.innerHTML = `X`;

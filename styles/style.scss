@@ -82,38 +82,47 @@ body {
         .histories {
             display: flex;
             width: 100%;
-            height: 40px;
+            height: 35px;
             align-items: center;
             margin: 8px 0;
             background: none;
             .delete{
+                outline: none;
+                border: none;
                 background-color: red;
                 padding: 8px;
+                margin-right: 4px;
                 height: 100%;
-                width:35px;
-                font-size: 1.2rem;
+                width:28px;
+                font-size: 1rem;
                 color: #fff;
                 font-weight: bolder;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             .content {
                 background-color: #fff;
-                width:90%;
+                width:95%;
                 height: 100%;
-                font-size: 1rem;
-                border-radius: 15px;
+                border-radius: 8px;
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
                 padding:12px;
-                border-right: 3px solid ;
                 color:#0B6496 ;
+                p {
+                    font-size: 1rem;
+                }
             }
 
             .income{
-                border-right: green;
+                border-right: 6px solid green;
             }
 
             .expense{
-                border-right: red;
+                border-right:6px solid red;
             }
         }
     }
