@@ -5,11 +5,11 @@ const incomeEl = document.querySelector('#income-amount');
 const expenseEl = document.querySelector('#expense-amount');
 const historyEl = document.querySelector('#history');
 const form = document.querySelector('#form-container');
-const transactionInput = document.querySelector('#transaction-input').value;
-const amountInput = document.querySelector('#amount-input').value;
+const transactionInput = document.querySelector('#transaction-input');
+const amountInput = document.querySelector('#amount-input');
 const submitTransactionBtn = document.querySelector('#submit-transaction');
 
-const content = document.querySelector('.content');
+let deleteButton;
 
 //declaring history
 let history;
@@ -43,11 +43,14 @@ function calculateBalance(mainArray) {
     let expenseArray = [];
     
     mainArray.forEach(number => {
+        number = +number;
         if (number > 0) {
             incomeArray.push(number);
+            console.log(incomeArray);
         }
         else {
             expenseArray.push(number);
+            console.log(expenseArray);
         }
     });
 
@@ -67,45 +70,61 @@ function addToHistory(transaction, amount) {
     history = document.createElement('div');
     history.classList.add('histories');
 
-    history.innerHTML = `
-    <button id="delete-transaction">X</button>
-    <div class="content">
-        <p>${transaction}</p>
-        <p>${amount}</p>
-    </div>`;
+    // history.innerHTML = `
+    // <button id="delete-transaction">X</button>
+    // <div class="content">
+    //     <p>${transaction}</p>
+    //     <p>${amount}</p>
+    // </div>`;
+    deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete');
+    deleteButton.innerHTML = `X`;
 
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.innerHTML = ``;
+    
     if (amount > 0) {
         content.classList.add('income');
     } else {
         content.classList.add('expense');
     }
 
+    history.appendChild(deleteButton);
+    history.appendChild(content);
+
     console.log(history);
+
     historyEl.appendChild(history);
 } // end addToHistory
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-        console.log(`Values for transaction and amount are ${transactionInput} and ${amountInput} `);
-        mainArray.push(amountInput);
+        console.log(transactionInput.value);
+        console.log(amountInput.value);
+
+        mainArray.push(amountInput.value);
+        console.log(mainArray);
         calculateBalance(mainArray);
-        addToHistory(transactionInput, amountInput);
+        addToHistory(transactionInput.value, amountInput.value);
 });
+
+console.log(mainArray);
+
 
 // history.addEventListener('hover', () => {
 //     deleteButton.classList.add('show');
 // });
 
-document.querySelector('#delete-transaction').addEventListener('click', () => {
-    let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
-    for(let i=0; 1<mainArray.length; i++){
-        if(mainArray[i] === amount){
-            mainArray.splice(i, 1);
-            break;
-        }    
-    }
-    calculateBalance(mainArray);
+// document.querySelector('#delete-transaction').addEventListener('click', () => {
+//     let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
+//     for(let i=0; 1<mainArray.length; i++){
+//         if(mainArray[i] === amount){
+//             mainArray.splice(i, 1);
+//             break;
+//         }    
+//     }
+//     calculateBalance(mainArray);
 
-    deleteButton.parentElement.remove();
-});
+//     deleteButton.parentElement.remove();
+// });
