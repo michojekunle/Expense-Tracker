@@ -83,10 +83,13 @@ function addToHistory(transaction, amount) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (transactionInput==='' || amountInput==='') {
-        alert('Please fill in values for transaction and amount')
+        alert('Please fill in values for transaction and amount');
+    } else {
+        mainArray.push(amountInput);
+        calculateBalance(mainArray);
+        addToHistory(transactionInput, amountInput);
     }
-})
-
+});
 
 history.addEventListener('hover', () => {
     deleteButton.classList.add('show');
@@ -104,4 +107,3 @@ deleteButton.addEventListener('click', () => {
 
     deleteButton.parentElement.remove();
 });
-
