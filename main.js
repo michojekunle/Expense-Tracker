@@ -103,10 +103,6 @@ function addToHistory(transaction, amount) {
     history = document.createElement('div');
     history.classList.add('histories');
 
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('delete');
-    deleteButton.innerHTML = `X`;
-
     const content = document.createElement('div');
     content.classList.add('content');
     content.innerHTML = `<p>${transaction}</p>
@@ -118,7 +114,6 @@ function addToHistory(transaction, amount) {
         content.classList.add('expense');
     }
 
-    history.appendChild(deleteButton);
     history.appendChild(content);
 
     console.log(history);
@@ -147,7 +142,7 @@ console.log(mainArray);
 // });
 
 const deleteHistory = () => {
-    let amount = deleteButton.nextElementSibling.lastChild.innerHTML;
+    let amount = +history.children[0].children[1].text;
     console.log(amount);
     for(let i=0; 1<mainArray.length; i++){
         if(mainArray[i] === amount){
@@ -160,5 +155,5 @@ const deleteHistory = () => {
     deleteButton.parentElement.remove();
 }
 
-document.querySelector('history').addEventListener('click', deleteHistory());
+document.querySelector('history').addEventListener('dblclick', deleteHistory());
 
