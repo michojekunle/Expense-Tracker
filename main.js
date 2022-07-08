@@ -10,8 +10,6 @@ const amountInput = document.querySelector('#amount-input');
 const submitTransactionBtn = document.querySelector('#submit-transaction');
 const deleteTransaction = document.querySelector('.delete');
 
-//declaring history
-let history;
 
 //declaring mainArray containing amount of all transactions.
 const mainArray = [];
@@ -99,28 +97,20 @@ function calculateBalance(mainArray) {
 
 //function to add to History 
 function addToHistory(transaction, amount) {
-    //creating histroy element
-    history = document.createElement('div');
+    //creating history element
+    const history = document.createElement('div');
     history.classList.add('histories');
-
-    const deleteButton = document.createElement('p');
-    deleteButton.classList.add('delete');
-    deleteButton.innerHTML = `<button onclick="deleteHistory()"></button>`;
-
-    const content = document.createElement('div');
-    content.classList.add('content');
-    content.innerHTML = `<p>${transaction}</p>
-                         <p>${amount}</p>`;
     
+    history.innerHTML = `<p>${transaction}</p>
+                         <p id="amount">${amount}</p>`;
+    
+    // history.addEventListener('dblclick', deleteHistory(document.querySelector('#amount')));
+
     if (amount > 0) {
-        content.classList.add('income');
+        history.classList.add('income');
     } else {
-        content.classList.add('expense');
+        history.classList.add('expense');
     }
-
-    history.appendChild(content);
-
-    console.log(history);
 
     historyEl.appendChild(history);
 } // end addToHistory
@@ -140,19 +130,17 @@ form.addEventListener('submit', (e) => {
 
 console.log(mainArray);
 
-function deleteHistory() {
-    let amount = +history.children[0].children[1].text;
+
+function deleteHistory(amount) {
     console.log(amount);
+    // console.log(amount);
+    // for(let i=0; 1<mainArray.length; i++){
+    //     if(mainArray[i] === amount){
+    //         mainArray.splice(i, 1);
+    //         break;
+    //     }    
+    // }
+    // calculateBalance(mainArray);
 
-    for(let i=0; 1<mainArray.length; i++){
-        if(mainArray[i] === amount){
-            mainArray.splice(i, 1);
-            break;
-        }    
-    }
-
-    calculateBalance(mainArray);
-
-    deleteButton.parentElement.remove();
+    // deleteButton.parentElement.remove();
 }
-

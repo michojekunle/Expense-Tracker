@@ -84,40 +84,18 @@ body {
             width: 100%;
             height: 35px;
             align-items: center;
+            justify-content: space-between;
             margin: 8px 0;
             background: none;
-        p{
-            .delete{
-                outline: none;
-                border: none;
-                background-color: red;
-                padding: 8px;
-                margin-right: 4px;
-                height: 100%;
-                width:28px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding:12px;
+            cursor: pointer;
+            p {
+                color:#0B6496 ;
                 font-size: 1rem;
-                color: #fff;
-                font-weight: bolder;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
         }
-            .content {
-                background-color: #fff;
-                width:95%;
-                height: 100%;
-                border-radius: 8px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding:12px;
-                color:#0B6496 ;
-                p {
-                    font-size: 1rem;
-                }
-            }
 
             .income{
                 border-right: 6px solid green;
@@ -128,7 +106,6 @@ body {
             }
         }
     }
-}
 
 .expensesInput {
     width: 30%;
