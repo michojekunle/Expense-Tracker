@@ -9,44 +9,38 @@ const transactionInput = document.querySelector('#transaction-input');
 const amountInput = document.querySelector('#amount-input');
 const submitTransactionBtn = document.querySelector('#submit-transaction');
 const deleteTransaction = document.querySelector('.delete');
-
+const clearAll = document.querySelector('#clearAll');
 
 //declaring mainArray containing amount of all transactions.
 const mainArray = [];
 
-//Store class:handles storage
-// class Store {
-//     static getBooks() {
-//         let books;
+getHistoryFromLocalStorage();
 
-//         if(localStorage.getItem('books')===null){
-//             books = [];
-//         } else {
-//             books = JSON.parse(localStorage.getItem('books'));
-//         }
-//         return books;
-//     }
-    
-//     static addBook(book) {
-//         const books = Store.getBooks();
+calculateBalance(mainArray);
 
-//         books.push(book);
+function saveHistoryToLocalStorage(transaction, amount) {
+    localStorage.setItem(transaction, amount);
+    console.log(localStorage);
 
-//         localStorage.setItem('books', JSON.stringify(books));
-//     }
+    addToHistory(transaction, amount);
+    calculateBalance(mainArray);
+}
 
-//     static removeBook(isbn) {
-//         const books = Store.getBooks();
 
-//         books.forEach((book, index) => {
-//             if (book.isbn === isbn){
-//                 books.splice(index, 1);
-//             }
-//         })
+function getHistoryFromLocalStorage() {
 
-//         localStorage.setItem('books', JSON.stringify(books));
-//     }
-// }
+    for(let i = 0;i<localStorage.length;i++) {
+        let a = localStorage.key(i);
+        mainArray.push(localStorage.getItem(a));
+
+        console.log(mainArray);
+
+        addToHistory(localStorage.key(i), localStorage.getItem(a));
+    }
+
+    calculateBalance(mainArray);
+}
+
 
 //function to calculate income.
 function calculateIncome(incomeArray) {
@@ -58,7 +52,7 @@ function calculateIncome(incomeArray) {
 }//end function calculateIncome.
 
 
-//function to calculte expense.
+//function to calculate expense.
 function calculateExpense(expenseArray) {
     let total = 0;
     expenseArray.forEach(num => {
@@ -120,27 +114,13 @@ form.addEventListener('submit', (e) => {
         console.log(transactionInput.value);
         console.log(amountInput.value);
 
-        mainArray.push(amountInput.value);
-        console.log(mainArray);
-        calculateBalance(mainArray);
-        addToHistory(transactionInput.value, amountInput.value);
+        saveHistoryToLocalStorage(transactionInput.value, amountInput.value);
+
         transactionInput.value = '';
         amountInput.value = '';
+        location.reload();
 });
 
-console.log(mainArray);
-
-
-function deleteHistory(amount) {
-    console.log(amount);
-    // console.log(amount);
-    // for(let i=0; 1<mainArray.length; i++){
-    //     if(mainArray[i] === amount){
-    //         mainArray.splice(i, 1);
-    //         break;
-    //     }    
-    // }
-    // calculateBalance(mainArray);
-
-    // deleteButton.parentElement.remove();
-}
+clearAll.addEventListener('click', () => {
+    
+})
