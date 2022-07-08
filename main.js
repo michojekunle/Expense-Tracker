@@ -122,5 +122,6 @@ form.addEventListener('submit', (e) => {
 });
 
 clearAll.addEventListener('click', () => {
-    
+    localStorage.clear();
+    location.reload();
 })
